@@ -1,0 +1,227 @@
+.interaction {
+  width: 100%;
+  padding-top: 90px;
+}
+
+.interaction__container {
+  position: relative;
+  display: flex;
+  width: 1170px;
+  flex-direction: column;
+  align-items: flex-start;
+  .mg-auto();
+}
+
+.interaction__tab {
+  display: flex;
+  flex-direction: row;
+  width: 585px;
+}
+
+.interaction__tablinks {
+  width: 195px;
+  height: 50px;
+  .reset();
+  border: 1px solid #d7d9df;
+  box-sizing: border-box;
+  transition: 0.3s;
+  .font-base(@fontName;normal;400;20px;27px);
+  text-align: center;
+  background-color: #ffffff;
+  color: #48494d;
+  outline: none;
+}
+
+.interaction__table {
+  width: 585px;
+  border-collapse: collapse;
+}
+
+.interaction__table tr {
+  height: 50px;
+  border-bottom: 1px solid #d7d9df;
+  box-sizing: border-box;
+}
+
+.interaction__table th {
+  height: 50px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.interaction__table td {
+  text-align: right;
+  padding-right: 20px;
+
+}
+
+.interaction__wrapper--comment {
+  display: none;
+  flex-direction: column;
+  min-width: 1170px;
+  .mg-auto();
+}
+
+.interaction__wrapper--contact {
+  display: none;
+  flex-direction: row;
+  width: 779px;
+  height: 272px;
+  padding-top: 30px;
+}
+
+.interaction-contact__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.interaction__comment h2{
+  .font-base(@fontName;normal;bold;20px;27px);
+  color: #48494d;
+
+}
+
+.interaction__comment h3{
+  position: relative;
+  margin-top: 12px;
+  padding-left: 15px;
+  .font-base(@fontNameBold;normal;600;15px;20px);
+  color: #000000;
+  &:first-of-type::before {
+    position: absolute;
+    content: '+';
+    top: 0;
+    left: 0;
+    color: #ff0000;
+  }
+
+  &:nth-of-type(2)::before {
+    position: absolute;
+    content: '-';
+    top: 0;
+    left: 0;
+    color: #ff0000;
+  }
+
+  &:nth-of-type(3) {
+    padding-left: 0;
+  }
+}
+
+.interaction__comment {
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
+}
+
+.interaction__advice {
+  display: flex;
+  flex-direction: row;
+  padding: 20px 0 30px 0;
+}
+
+.interaction__advice p {
+  padding-left: 20px;
+  .font-base(@fontName;normal;normal;15px;20px);
+  color: #d12136;
+}
+
+.interaction__star {
+  padding-right: 2px;
+}
+
+.interaction__star--red {
+  fill: #d12136;
+}
+
+.interaction__star--grey {
+  fill: #bdbec2;
+}
+
+.interaction__answer {
+  display: flex;
+  flex-direction: row;
+  width: 203px;
+  justify-content: space-between;
+  padding-bottom: 21px;
+}
+
+.interaction__button {
+  width: 73px;
+  height: 22px;
+  .reset();
+  .font-base(@fontName;normal;normal;16px;22px);
+  color: #d12136;
+  background-color: white;
+  text-align: center;
+  border: none;
+}
+
+.interaction__answer p{
+  .font-base(@fontName;normal;normal;14px;19px);
+  color: #000000;
+  opacity: 0.4;
+}
+
+.interaction__comment--first {
+  position: relative;
+}
+
+.interaction__btnfeedback {
+  position: absolute;
+  width: 192px;
+  height: 52px;
+  right: 0;
+  top:0;
+  border: 1px solid #D12136;
+  .font-base(@fontName;normal;600;14px;19px);
+  text-align: center;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #d12136;
+  background-color: white;
+}
+
+.interaction-contact__container--adress {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 348px;
+  height: 271px;
+  padding-right: 74px;
+}
+
+.interaction-contact__container--adress h3 {
+  .reset();
+  .font-base(@fontNameBold;normal;600;16px;22px);
+  color: #1a212f;
+}
+
+.interaction-contact__container--adress p {
+/*  padding: 18px 0 23px 0;
+*/  .font-base(@fontNameBold;normal;600;14px;19px);
+  color: #000000;
+}
+
+.interaction-contact__container--adress a {
+/*  padding: 15px 0 0 0;
+*/  .font-base(@fontNameBold;normal;600;14px;19px);
+  text-decoration: none;
+  color: #000000;
+}
+
+.interaction-contact__container--map {
+  position: relative;
+  height: 271px;
+}
+
+/*.interaction-contact__container--map img {
+ z-index: -1;
+}
+*/
+#map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 431px;
+  height: 271px;
+  z-index: 3;
+}

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Автомото</title>
+  <link rel="preload" href="fonts/opensans.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/opensansbold.woff2" as="font" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.min.css">
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=API_KEY" type="text/javascript"></script>
+</head>
+<body>
+  <div style="display: none;">
+    <include src="source/img/sprite_auto.svg"></include>
+  </div>
+  <header class="header">
+    <div class="header__wrapper">
+      <a href="#" aria-label="Логотип" class="header__logo">
+        <img src="img/logo.svg" alt="Логотип" width="55" height="55">
+        <p>avto<br>
+         moto</p>
+       </a>
+     </div>
+     <nav class="main-nav">
+      <div class="main-nav__wrapper">
+        <ul class="main-nav__list site-list">
+          <li class="site-list__item">
+            <a href="#">Автомобили</a>
+          </li>
+          <li class="site-list__item">
+            <a href="#">Контакты</a>
+          </li>
+          <li class="site-list__item">
+            <a href="#">Услуги</a>
+          </li>
+          <li class="site-list__item">
+            <a href="#">Вакансии</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="card">
+      <div class="card__wpapper card__wpapper--auto">
+        <div id="img1" class="card__img card__img--slide1">
+         <picture>
+          <!-- 1х: 600px; 2x: 1200px -->
+          <source type="image/webp" srcset="img/slide1_1x.webp 1x, img/slide1_2x.webp 2x">
+            <img src="img/slide1_1x.jpg" width="600" height="375" alt="Фото автомобиля" >
+          </picture>
+        </div>
+        <div id="img2" class="card__img card__img--slide2">
+         <picture>
+          <!-- 1х: 600px; 2x: 1200px -->
+          <source type="image/webp" srcset="img/slide2_1x.webp 1x, img/slide2_2x.webp 2x">
+            <img src="img/slide2_1x.jpg" width="600" height="375" alt="Фото автомобиля" >
+          </picture>
+        </div>
+        <div id="img3" class="card__img card__img--slide3">
+         <picture>
+          <!-- 1х: 600px; 2x: 1200px -->
+          <source type="image/webp" srcset="img/slide3_1x.webp 1x, img/slide3_2x.webp 2x">
+            <img src="img/slide3_1x.jpg" width="600" height="375" alt="Фото автомобиля" >
+          </picture>
+        </div>
+        <div class="card__description">
+          <h2>Марпех 11</h2>
+          <ul class="card__list">
+            <li class="card__item">
+              <svg aria-label="Тип топлива" class="card__icon card__icon--motor" width="53" height="40">
+                <use xlink:href="#icon-typemotor"></use>
+              </svg>
+              <p>бензин</p>
+            </li>
+            <li class="card__item">
+              <svg aria-label="Тип передач" class="card__icon card__icon--transmission" width="53" height="40">
+                <use xlink:href="#icon-transmission"></use>
+              </svg>
+              <p>механика</p>
+            </li>
+            <li class="card__item">
+              <svg aria-label="Мощность двигателя" class="card__icon card__icon--power" width="53" height="40">
+                <use xlink:href="#icon-power"></use>
+              </svg>
+              <p>100 л.с.</p>
+            </li>
+            <li class="card__item">
+              <svg aria-label="ОБъем двигателя" class="card__icon card__icon--volume" width="53" height="40">
+                <use xlink:href="#icon-volume"></use>
+              </svg>
+              <p>1.4 л</p>
+            </li>
+          </ul>
+          <div class="card__price">
+            <h3>2 300 000  ₽</h3>
+            <p> 2 400 000  ₽</p>
+          </div>
+          <button  class="card__btn card__btn--request" type="submit" value="Отправить">оставить заявку</button>
+          <button  class="card__btn card__btn--credite" type="submit" value="Отправить">в кредит от 11 000 ₽</button>
+        </div>
+      </div>
+      <div class="card__wpapper card__wpapper--slider">
+        <div class="card__container card-slider">
+          <svg aria-label="Кнопка влево" class="card-slider__btn  card-slider__btn--left" width="52" height="52">
+            <use xlink:href="#icon-left"></use>
+          </svg>
+          <img id="slade1" src="img/slide1_1x.jpg" width="128" height="80" alt="Фото автомобиля" style="border: 1px solid blue">
+          <img id="slade2" src="img/slide2_1x.jpg" width="128" height="80" alt="Фото автомобиля" >
+          <img id="slade3" src="img/slide3_1x.jpg" width="128" height="80" alt="Фото автомобиля" >
+          <svg aria-label="Кнопка вправо" class="card-slider__btn card-slider__btn--right" width="52" height="52">
+            <use xlink:href="#icon-right"></use>
+          </svg>
+        </div>
+      </div>
+    </section>
+    <section class="interaction">
+      <div class="interaction__container">
+        <div class="interaction__tab">
+          <button class="interaction__tablinks">Характеристики</button>
+          <button class="interaction__tablinks">Отзывы</button>
+          <button class="interaction__tablinks">Контакты</button>
+        </div>
+        <div class="interaction__wrapper interaction__wrapper--property">
+          <table class="interaction__table">
+            <tr><th>Трансмиссия</th><td>Роботизированная</td></tr>
+            <tr><th>Мощность двигателя, л.с.</th><td>249</td></tr>
+            <tr><th>Тип двигателя</th><td>Бензиновый</td></tr>
+            <tr><th>Привод</th><td>Полный</td></tr>
+            <tr><th>Объем двигателя, л</th><td>2.4</td></tr>
+            <tr><th>Макс. крутящий момент</th><td>370/4500</td></tr>
+            <tr><th>Количество цилиндров</th><td>4</td></tr>
+          </table>
+        </div>
+        <div class="interaction__wrapper interaction__wrapper--comment">
+          <div class="interaction__comment interaction__comment--first">
+            <button  class="interaction__btnfeedback" type="button" >оставить отзыв</button>
+            <h2>Борис Иванов</h2>
+            <h3>Достоинства</h3>
+            <p>мощность, внешний вид</p>
+            <h3>Недостатки</h3>
+            <p>Слабые тормозные колодки (пришлось заменить)</p>
+            <h3>Комментарий</h3>
+            <p>Взяли по трейд-ин, на выгодных условиях у дилера. Стильная внешка и крут по базовым характеристикам. Не думал, что пересяду на китайский автопром, но сейчас гоняю и понимаю, что полностью доволен.</p>
+            <div class="interaction__advice">
+
+
+              <svg aria-label="Лайк" class="interaction__star interaction__star--red" width="17" height="17">
+                <use xlink:href="#icon-star"></use>
+              </svg>
+              <svg aria-label="Лайк" class="interaction__star interaction__star--red" width="17" height="17">
+                <use xlink:href="#icon-star"></use>
+              </svg>
+              <svg aria-label="Лайк" class="interaction__star interaction__star--red" width="17" height="17">
+                <use xlink:href="#icon-star"></use>
+              </svg>
+              <svg aria-label="Лайк" class="interaction__star interaction__star--mix" width="17" height="17">
+                <use  xlink:href="#icon-stargrey"></use>
+              </svg>
+              <svg aria-label="Лайк" class="interaction__star interaction__star--grey" width="17" height="17">
+                <use xlink:href="#icon-star"></use>
+              </svg>
+              <p>Советует</p>
+            </div>
+            <div class="interaction__answer">
+              <p>1 минуту назад</p>
+              <button class="interaction__button" >Ответить</button>
+            </div>
+          </div>
+          <div class="interaction__comment interaction__comment--second">
+            <h2>Марсель Исмагилов</h2>
+            <h3>Достоинства</h3>
+            <p>Cтиль, комфорт, управляемость</p>
+            <h3>Недостатки</h3>
+            <p>Дорогой ремонт и обслуживание</p>
+            <h3>Комментарий</h3>
+            <p>Дизайн отличный, управление просто шикарно, ощущения за рулём такой машины особые. Но ремонт очень дорогой. Пару месяцев назад пришлось менять двигатель. По стоимости вышло как новый автомобиль. Так что, если покупать эту машину, надо быть готовым к большим расходам на обслуживание.</p>
+            <div class="interaction__advice">
+              <svg aria-label="Лайк" class="interaction__star interaction__star--red" width="17" height="17">
+                <use xlink:href="#icon-star"></use>
+              </svg>
+              <svg aria-label="Лайк" class="interaction__star interaction__star--red" width="17" height="17">
+                <use xlink:href="#icon-star"></use>
+              </svg>
+              <svg aria-label="Лайк" class="interaction__star interaction__star--red" width="17" height="17">
+                <use xlink:href="#icon-star"></use>
+              </svg>
+              <svg aria-label="Лайк" class="interaction__star interaction__star--mix" width="17" height="17">
+                <use  xlink:href="#icon-stargrey"></use>
+              </svg>
+              <svg aria-label="Лайк" class="interaction__star interaction__star--grey" width="17" height="17">
+                <use xlink:href="#icon-star"></use>
+              </svg>
+              <p>Советует</p>
+            </div>
+            <div class="interaction__answer">
+              <p>1 минуту назад</p>
+              <button class="interaction__button" >Ответить</button>
+            </div>
+          </div>
+        </div>
+        <div class="interaction__wrapper interaction__wrapper--contact interaction-contact">
+          <div class="interaction-contact__container interaction-contact__container--adress">
+            <h3>Адрес</h3>
+            <p>Санкт-Петербург, набережная реки Карповки, дом 5</p>
+            <h3>Режим работы</h3>
+            <p>Ежедневно, с 10:00 до 21:00</p>
+            <h3>Телефон</h3>
+            <a href="tel:+78003335599">8 (800) 333-55-99</a>
+            <h3>E-mail</h3>
+            <a href="mailto:info@avto-moto.ru">info@avto-moto.ru</a>
+          </div>
+          <div class="interaction-contact__container interaction-contact__container--map">
+            <div id="map"></div>
+            <img src="img/contacts.png" width="431" height="271" alt="Карта">
+          </div>
+        </div>
+      </div>
+    </section>
+    </main>
+    <footer class="footer">
+      <section class="footer-menu">
+        <h2 class="visually-hidden">Дополнительное меню</h2>
+        <ul class="footer-menu__list ">
+          <li class="footer-menu__item">
+            <a href="#">Корпоративным клиентам</a>
+          </li>
+          <li class="footer-menu__item">
+            <a href="#">Клиентам</a>
+          </li>
+          <li class="footer-menu__item">
+            <a href="#">Аренда авто</a>
+          </li>
+          <li class="footer-menu__item">
+            <a href="#">Каршеринг</a>
+          </li>
+          <li class="footer-menu__item">
+            <a href="#">Как продать авто</a>
+          </li>
+          <li class="footer-menu__item">
+            <a href="#">Trade-in</a>
+          </li>
+          <li class="footer-menu__item">
+            <a href="#">Test-drive</a>
+          </li>
+        </ul>
+      </section>
+    </footer>
+    <div class="popup-background popup-background--disabled">
+
+    </div>
+    <div class="popup popup--disabled">
+      <h2>Оставить отзыв</h2>
+      <span class="popup__close"></span>
+      <form class="popup__form " action="https://echo.htmlacademy.ru" method="post" enctype="multipart/form-data" autocomplete="off">
+        <fieldset class="popup__element popup__element--name">
+          <label class="popup__label popup__label--name" for="name">Пожалуйста, заполните поле</label>
+          <span class="popup__span popup__span--name"></span>
+          <input  type="text" name="name" id="name" placeholder="Имя" required="" autofocus>
+          <label  for="advantage"></label>
+          <input  type="text" name="advantage" id="advantage" placeholder="Достоинства" title="Достоинства">
+          <label  for="disadvantage"></label>
+          <input  type="text" name="disadvantage" id="disadvantage" placeholder="Недостатки" title="Недостатки">
+        </fieldset>
+        <fieldset class="popup__element popup__element--rate">
+          <div class="popup__wrapper">
+            <p>Оцените товар</p>
+            <div class="popup__rate">
+              <input class="popup__input" type="checkbox" id="rating1" name="rating" value="1"/>
+              <label class="popup__label popup__label--nostar" for="rating1" title="1 star"></label>
+              <input class="popup__input" type="checkbox" id="rating2" name="rating" value="2" />
+              <label class="popup__label popup__label--nostar" for="rating2" title="2 star"></label>
+              <input class="popup__input" type="checkbox" id="rating3" name="rating" value="3" />
+              <label class="popup__label popup__label--nostar" for="rating3" title="3 star"></label>
+              <input class="popup__input" type="checkbox" id="rating4" name="rating" value="4" />
+              <label class="popup__label popup__label--nostar" for="rating4" title="4 star"></label>
+              <input class="popup__input" type="checkbox" id="rating5" name="rating" value="5" />
+              <label class="popup__label popup__label--nostar" for="rating5" title="5 star"></label>
+              <label for="comment"></label>
+            </div>
+          </div>
+          <span class="popup__span popup__span--comment"></span>
+          <label for="comment" title="Заполните комментарий"></label>
+          <textarea id="comment" name="comment" placeholder="Комментарий" required=""></textarea>
+        </fieldset>
+        <button  class="popup__btn" type="submit" value="Отправить">оставить отзыв</button>
+      </form>
+    </div>
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

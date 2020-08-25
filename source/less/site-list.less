@@ -1,0 +1,33 @@
+.site-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  .reset();
+}
+
+.site-list__item {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.site-list__item a {
+  display: block;
+  .reset();
+  margin-right: 68px;
+  .font-base(@fontName;normal;600;16px;22px);
+  text-align: center;
+  text-decoration: none;
+  color: #48494d;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:active {
+    opacity: 0.4;
+  }
+}
+

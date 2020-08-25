@@ -1,0 +1,192 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  padding-top: 90px;
+  background: #ffffff;
+}
+
+.card__wpapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.card__wpapper--auto {
+  width: 1170px;
+  .mg-auto();
+}
+
+.card__list {
+  display: flex;
+  flex-direction: row;
+  .reset();
+  padding-top: 19px;
+}
+
+.card__img {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  justify-content: flex-end;
+}
+
+
+.card__description {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  justify-content: left;
+  padding-left: 54px;
+}
+
+
+.card__item {
+  display: flex;
+  flex-direction: column;
+  width: 76px;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+
+}
+
+.card__description h3, p {
+  display: flex;
+  .reset();
+}
+
+.card__description h2 {
+  width: 100%;
+  .font-base(@fontNameBold;normal;600;30px;41px);
+  .reset();
+  margin-top: -10px;
+  color: #48494d;
+}
+
+.card__description h3 {
+  width: 189px;
+  .font-base(@fontNameBold;normal;600;35px;48px);
+  color: #48494d;
+  letter-spacing: -1.9px;
+}
+
+.card__description p {
+  position: relative;
+  width: 123px;
+  .font-base(@fontName;normal;400;20px;27px);
+  color: rgba(72, 73, 77, 0.5);
+}
+
+.card__description p::before {
+  position: absolute;
+  content: "";
+  width: 87%;
+  height: 1px;
+  background: #a3a4a6;
+  top: 50%;
+  left: 0;
+  transform: rotate(-7deg);
+}
+
+.card__item p {
+  max-width: 76px;
+  .font-base(@fontName;normal;400;16px;22px);
+  .reset();
+  text-align: center;
+  justify-content: center;
+}
+
+.card__item p::before {
+  display: none;
+}
+
+.card__price {
+  display: flex;
+  width: 342px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 37px 0 37px 0;
+}
+
+.card__btn {
+  display: flex;
+  flex-direction: row;
+  width: 196px;
+  height: 52px;
+  padding: 16.5px 20px;
+  .font-base(@fontName;normal;400;14px;19px);
+  text-align: center;
+  justify-content: center;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.card__btn--request {
+  margin-bottom: 16px;
+  background: #d12136;
+  color: #ffffff;
+  border: none;
+}
+
+.card__btn--credite {
+  width: 222px;
+  background: #ffffff;
+  border: 1px solid #d12136;
+  color: #d12136;
+}
+
+
+.card__img--slide2, .card__img--slide3 {
+  display: none;
+}
+
+.card__wpapper--slider {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 50%;
+  padding-top: 39px;
+}
+
+.card__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 600px;
+}
+
+.card-slider__btn path {
+  stroke:inherit;
+  stroke-width:inherit;
+  fill:inherit;
+}
+
+.card-slider__btn {
+  fill: white;
+  cursor: pointer;
+}
+
+.card-slider__btn--left {
+  stroke: #d7d9df;
+}
+
+.card-slider__btn--right  {
+  stroke: #48494d;
+}
+
+.card__icon--motor,
+.card__icon--transmission {
+  position: relative;
+  fill: white;
+}
+
+/* .card__icon--motor:after {
+  position: absolute;
+  width: 70px;
+  height: 22px;
+  content: 'бензин';
+}
+ */
