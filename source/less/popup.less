@@ -16,7 +16,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  background: rgba(0,0,0,.5);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
@@ -31,31 +31,34 @@
 }
 
 .popup__close {
-position: absolute;
-right: 32px;
-top: 32px;
-width: 32px;
-height: 32px;
-opacity: 0.3;
+  position: absolute;
+  right: 32px;
+  top: 32px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
 }
 
 .popup__close:hover {
-opacity: 1;
+  opacity: 1;
 }
 
-.popup__close:before, .popup__close:after {
-position: absolute;
-left: 15px;
-content: ' ';
-height: 17px;
-width: 2px;
-background-color: #333;
+.popup__close::before,
+.popup__close::after {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 17px;
+  width: 2px;
+  background-color: #333333;
 }
-.popup__close:before {
-transform: rotate(45deg);
+
+.popup__close::before {
+  transform: rotate(45deg);
 }
-.popup__close:after {
-transform: rotate(-45deg);
+
+.popup__close::after {
+  transform: rotate(-45deg);
 }
 
 .popup h2 {
@@ -63,7 +66,7 @@ transform: rotate(-45deg);
   .mg-auto();
   padding-top: 30px;
   .font-base(@fontNameBold;normal;normal;25px;34px);
-  color: #48494D;
+  color: #48494d;
 }
 
 .popup__form {
@@ -78,11 +81,11 @@ transform: rotate(-45deg);
 }
 
 .popup__form input:focus {
-  outline: 1px solid rgba(72,73,77,.7);
+  outline: 1px solid rgba(72, 73, 77, 0.7);
 }
 
 .popup__form textarea:focus {
-  outline: 1px solid rgba(72,73,77,.7);
+  outline: 1px solid rgba(72, 73, 77, 0.7);
 }
 
 .popup__form fieldset {
@@ -111,7 +114,7 @@ transform: rotate(-45deg);
   padding-left: 25px;
 }
 
-input[name='name'] {
+input[name="name"] {
   border-color: #ff0000;
 }
 
@@ -130,7 +133,7 @@ input[name='name'] {
   height: 65px;
 }
 
-textarea[name='comment'] {
+textarea[name="comment"] {
   width: 300px;
   height: 118px;
   border: 1px solid rgba(72, 73, 77, 0.2);
@@ -141,23 +144,21 @@ textarea[name='comment'] {
   position: relative;
 }
 
-.popup__span--comment:before {
+.popup__span--comment::before {
   position: absolute;
   top: 15px;
   left: 15px;
-  content: '*';
+  content: "*";
   color: red;
 }
 
-.popup__span--name:before {
+.popup__span--name::before {
   position: absolute;
   top: 10px;
   left: 15px;
-  content: '*';
+  content: "*";
   color: red;
 }
-
-
 
 .popup__element--rate p {
   width: 50%;
@@ -173,24 +174,24 @@ textarea[name='comment'] {
   .reset();
 }
 
- .popup__input {
+.popup__input {
   display: none;
 }
 
-
-
-.popup__label--nostar:before {
-    display: inline-block;
-    margin: 0;
-    cursor: pointer;
-    content: url('../img/bigstar.svg');
+.popup__label--nostar::before {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  cursor: pointer;
+  content: url("../img/bigstar.svg");
 }
 
 
-input[type="checkbox"]:checked + .popup__label--star:before {
+input[type="checkbox"]:checked + .popup__label--star::before {
   display: inline-block;
+  vertical-align: middle;
   margin: 0;
-  content: url('../img/bigstarred.svg');
+  content: url("../img/bigstarred.svg");
 }
 
 .popup--disabled {

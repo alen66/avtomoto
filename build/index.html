@@ -8,7 +8,7 @@
   <link rel="preload" href="fonts/opensans.woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="fonts/opensansbold.woff2" as="font" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.min.css">
-  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=API_KEY" type="text/javascript"></script>
+  <link rel="shortcut icon" href="">
 </head>
 <body>
   <div style="display: none;">
@@ -87,16 +87,18 @@
 <path d="M12.0902 26.5423H10.8205C9.89441 26.5423 9.14081 25.7891 9.14081 24.8626V22.9675C9.14081 22.0414 9.89437 21.2881 10.8205 21.2881H12.0902C13.0165 21.2881 13.7697 22.0414 13.7697 22.9675V24.8626C13.7697 25.789 13.0164 26.5423 12.0901 26.5423L12.0902 26.5423ZM10.8204 22.6296C10.6373 22.6296 10.4827 22.7842 10.4827 22.9675V24.8627C10.4827 25.046 10.6373 25.2003 10.8204 25.2003H12.0901C12.2734 25.2003 12.428 25.046 12.428 24.8627V22.9675C12.428 22.7843 12.2734 22.6296 12.0901 22.6296H10.8204H10.8204Z" fill="#48494D"></path>
 </g>
 </symbol></svg>
+
   </div>
   <header class="header">
     <div class="header__wrapper">
       <a href="#" aria-label="Логотип" class="header__logo">
         <img src="img/logo.svg" alt="Логотип" width="55" height="55">
         <p>avto<br>
-         moto</p>
-       </a>
-     </div>
-     <nav class="main-nav">
+          moto
+        </p>
+      </a>
+    </div>
+    <nav class="main-nav">
       <div class="main-nav__wrapper">
         <ul class="main-nav__list site-list">
           <li class="site-list__item">
@@ -117,23 +119,24 @@
   </header>
   <main>
     <section class="card">
-      <div class="card__wpapper card__wpapper--auto">
+    <h1 class="card__title visually-hidden">Сайт фирмы Авто-Мото</h1>
+      <div class="card__wrapper card__wrapper--auto">
         <div id="img1" class="card__img card__img--slide1">
-         <picture>
+          <picture>
           <!-- 1х: 600px; 2x: 1200px -->
           <source type="image/webp" srcset="img/slide1_1x.webp 1x, img/slide1_2x.webp 2x">
             <img src="img/slide1_1x.jpg" width="600" height="375" alt="Фото автомобиля">
           </picture>
         </div>
         <div id="img2" class="card__img card__img--slide2">
-         <picture>
+          <picture>
           <!-- 1х: 600px; 2x: 1200px -->
           <source type="image/webp" srcset="img/slide2_1x.webp 1x, img/slide2_2x.webp 2x">
             <img src="img/slide2_1x.jpg" width="600" height="375" alt="Фото автомобиля">
           </picture>
         </div>
         <div id="img3" class="card__img card__img--slide3">
-         <picture>
+          <picture>
           <!-- 1х: 600px; 2x: 1200px -->
           <source type="image/webp" srcset="img/slide3_1x.webp 1x, img/slide3_2x.webp 2x">
             <img src="img/slide3_1x.jpg" width="600" height="375" alt="Фото автомобиля">
@@ -172,17 +175,17 @@
             <p> 2 400 000  ₽</p>
           </div>
           <button class="card__btn card__btn--request" type="submit" value="Отправить">оставить заявку</button>
-          <button class="card__btn card__btn--credite" type="submit" value="Отправить">в кредит от 11 000 ₽</button>
+          <button class="card__btn card__btn--credit" type="submit" value="Отправить">в кредит от 11 000 ₽</button>
         </div>
       </div>
-      <div class="card__wpapper card__wpapper--slider">
+      <div class="card__wrapper card__wrapper--slider">
         <div class="card__container card-slider">
           <svg aria-label="Кнопка влево" class="card-slider__btn  card-slider__btn--left" width="52" height="52">
             <use xlink:href="#icon-left"></use>
           </svg>
-          <img id="slade1" src="img/slide1_1x.jpg" width="128" height="80" alt="Фото автомобиля" style="border: 1px solid blue">
-          <img id="slade2" src="img/slide2_1x.jpg" width="128" height="80" alt="Фото автомобиля">
-          <img id="slade3" src="img/slide3_1x.jpg" width="128" height="80" alt="Фото автомобиля">
+          <img id="slide1" src="img/slide1_1x.jpg" width="128" height="80" alt="Фото автомобиля">
+          <img id="slide2" src="img/slide2_1x.jpg" width="128" height="80" alt="Фото автомобиля">
+          <img id="slide3" src="img/slide3_1x.jpg" width="128" height="80" alt="Фото автомобиля">
           <svg aria-label="Кнопка вправо" class="card-slider__btn card-slider__btn--right" width="52" height="52">
             <use xlink:href="#icon-right"></use>
           </svg>
@@ -192,9 +195,9 @@
     <section class="interaction">
       <div class="interaction__container">
         <div class="interaction__tab">
-          <button class="interaction__tablinks">Характеристики</button>
-          <button class="interaction__tablinks">Отзывы</button>
-          <button class="interaction__tablinks">Контакты</button>
+          <button class="interaction__tab-links">Характеристики</button>
+          <button class="interaction__tab-links">Отзывы</button>
+          <button class="interaction__tab-links">Контакты</button>
         </div>
         <div class="interaction__wrapper interaction__wrapper--property">
           <table class="interaction__table">
@@ -210,29 +213,27 @@
         <div class="interaction__wrapper interaction__wrapper--comment">
           <div class="interaction__comment interaction__comment--first">
             <button class="interaction__btnfeedback" type="button">оставить отзыв</button>
-            <h2>Борис Иванов</h2>
+            <h2 id="field1">Борис Иванов</h2>
             <h3>Достоинства</h3>
-            <p>мощность, внешний вид</p>
+            <p id="field2">мощность, внешний вид</p>
             <h3>Недостатки</h3>
-            <p>Слабые тормозные колодки (пришлось заменить)</p>
+            <p id="field3">Слабые тормозные колодки (пришлось заменить)</p>
             <h3>Комментарий</h3>
-            <p>Взяли по трейд-ин, на выгодных условиях у дилера. Стильная внешка и крут по базовым характеристикам. Не думал, что пересяду на китайский автопром, но сейчас гоняю и понимаю, что полностью доволен.</p>
+            <p id="field4">Взяли по трейд-ин, на выгодных условиях у дилера. Стильная внешка и крут по базовым характеристикам. Не думал, что пересяду на китайский автопром, но сейчас гоняю и понимаю, что полностью доволен.</p>
             <div class="interaction__advice">
-
-
-              <svg aria-label="Лайк" class="interaction__star interaction__star--red" width="17" height="17">
+              <svg aria-label="Лайк" class="interaction__star interaction__star--red" id="star1" width="17" height="17">
                 <use xlink:href="#icon-star"></use>
               </svg>
-              <svg aria-label="Лайк" class="interaction__star interaction__star--red" width="17" height="17">
+              <svg aria-label="Лайк" class="interaction__star interaction__star--red" id="star12" width="17" height="17">
                 <use xlink:href="#icon-star"></use>
               </svg>
-              <svg aria-label="Лайк" class="interaction__star interaction__star--red" width="17" height="17">
+              <svg aria-label="Лайк" class="interaction__star interaction__star--red" id="star3" width="17" height="17">
                 <use xlink:href="#icon-star"></use>
               </svg>
-              <svg aria-label="Лайк" class="interaction__star interaction__star--mix" width="17" height="17">
+              <svg aria-label="Лайк" class="interaction__star interaction__star--mix" id="star4" width="17" height="17">
                 <use xlink:href="#icon-stargrey"></use>
               </svg>
-              <svg aria-label="Лайк" class="interaction__star interaction__star--grey" width="17" height="17">
+              <svg aria-label="Лайк" class="interaction__star interaction__star--grey" id="star5" width="17" height="17">
                 <use xlink:href="#icon-star"></use>
               </svg>
               <p>Советует</p>
@@ -286,7 +287,7 @@
             <a href="mailto:info@avto-moto.ru">info@avto-moto.ru</a>
           </div>
           <div class="interaction-contact__container interaction-contact__container--map">
-            <div id="map"></div>
+            <div class="interaction-box__map" id="map"></div>
             <img src="img/contacts.png" width="431" height="271" alt="Карта">
           </div>
         </div>
@@ -351,16 +352,16 @@
               <label class="popup__label popup__label--nostar" for="rating4" title="4 star"></label>
               <input class="popup__input" type="checkbox" id="rating5" name="rating" value="5">
               <label class="popup__label popup__label--nostar" for="rating5" title="5 star"></label>
-              <label for="comment"></label>
             </div>
           </div>
           <span class="popup__span popup__span--comment"></span>
           <label for="comment" title="Заполните комментарий"></label>
-          <textarea id="comment" name="comment" placeholder="Комментарий" required=""></textarea>
+          <textarea id="comment" name="comment" placeholder="Комментарий" minlength="30" maxlength="1000" required=""></textarea>
         </fieldset>
         <button class="popup__btn" type="submit" value="Отправить">оставить отзыв</button>
       </form>
     </div>
-    <script type="text/javascript" src="js/script.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=API_KEY"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

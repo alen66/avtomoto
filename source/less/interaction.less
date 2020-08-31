@@ -18,7 +18,7 @@
   width: 585px;
 }
 
-.interaction__tablinks {
+.interaction__tab-links {
   width: 195px;
   height: 50px;
   .reset();
@@ -52,13 +52,12 @@
 .interaction__table td {
   text-align: right;
   padding-right: 20px;
-
 }
 
 .interaction__wrapper--comment {
   display: none;
   flex-direction: column;
-  min-width: 1170px;
+  width: 1170px;
   .mg-auto();
 }
 
@@ -75,21 +74,21 @@
   flex-direction: column;
 }
 
-.interaction__comment h2{
+.interaction__comment h2 {
   .font-base(@fontName;normal;bold;20px;27px);
   color: #48494d;
-
 }
 
-.interaction__comment h3{
+.interaction__comment h3 {
   position: relative;
   margin-top: 12px;
   padding-left: 15px;
   .font-base(@fontNameBold;normal;600;15px;20px);
   color: #000000;
+
   &:first-of-type::before {
     position: absolute;
-    content: '+';
+    content: "+";
     top: 0;
     left: 0;
     color: #ff0000;
@@ -97,7 +96,7 @@
 
   &:nth-of-type(2)::before {
     position: absolute;
-    content: '-';
+    content: "-";
     top: 0;
     left: 0;
     color: #ff0000;
@@ -106,6 +105,11 @@
   &:nth-of-type(3) {
     padding-left: 0;
   }
+}
+
+.interaction__comment p {
+  display: flex;
+  justify-content: space-between;
 }
 
 .interaction__comment {
@@ -155,7 +159,7 @@
   border: none;
 }
 
-.interaction__answer p{
+.interaction__answer p {
   .font-base(@fontName;normal;normal;14px;19px);
   color: #000000;
   opacity: 0.4;
@@ -170,8 +174,8 @@
   width: 192px;
   height: 52px;
   right: 0;
-  top:0;
-  border: 1px solid #D12136;
+  top: 0;
+  border: 1px solid #d12136;
   .font-base(@fontName;normal;600;14px;19px);
   text-align: center;
   letter-spacing: 0.12em;
@@ -196,14 +200,12 @@
 }
 
 .interaction-contact__container--adress p {
-/*  padding: 18px 0 23px 0;
-*/  .font-base(@fontNameBold;normal;600;14px;19px);
+  .font-base(@fontNameBold;normal;600;14px;19px);
   color: #000000;
 }
 
 .interaction-contact__container--adress a {
-/*  padding: 15px 0 0 0;
-*/  .font-base(@fontNameBold;normal;600;14px;19px);
+  .font-base(@fontNameBold;normal;600;14px;19px);
   text-decoration: none;
   color: #000000;
 }
@@ -213,11 +215,7 @@
   height: 271px;
 }
 
-/*.interaction-contact__container--map img {
- z-index: -1;
-}
-*/
-#map {
+.interaction-box__map {
   position: absolute;
   top: 0;
   left: 0;
