@@ -535,7 +535,7 @@ p {
   text-align: center;
   background-color: #ffffff;
   color: #48494d;
-  outline: none;
+  outline: #48494d;
 }
 .interaction__table {
   width: 585px;
@@ -961,6 +961,9 @@ textarea[name="comment"] {
   line-height: 20px;
   color: #000000;
 }
+.popup__element--rate p:hover {
+  color: #d12136;
+}
 .popup__rate {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -983,6 +986,13 @@ textarea[name="comment"] {
   margin: 0;
   cursor: pointer;
   content: url("../img/bigstar.svg");
+}
+.popup__label--nostar:hover {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  cursor: pointer;
+  content: url("../img/bigstarred.svg");
 }
 input[type="checkbox"]:checked + .popup__label--star::before {
   display: inline-block;

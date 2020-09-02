@@ -103,10 +103,30 @@ function changeWrapper(el) {
   tablinksElements[ind].style.color = '#ffffff';
 }
 
+function changeWrapperKey(evt) {
+  if (evt.key === 'Tab') {
+    var ind = +document.activeElement.dataset.index;
+    wrapperElements.forEach(function (element, index) {
+      element.style.display = 'none';
+      tablinksElements[index].style.background = '#ffffff';
+      tablinksElements[index].style.color = '#48494d';
+    });
+
+    if (ind + 1 === 3) {
+      ind = -1;
+    }
+
+    wrapperElements[ind + 1].style.display = 'flex';
+    tablinksElements[ind + 1].style.background = '#d12136';
+    tablinksElements[ind + 1].style.color = '#ffffff';
+  }
+}
+
 function onTablinksClick() {
   tablinksElements.forEach(function (element, index) {
     element.setAttribute('data-index', index);
     element.addEventListener('click', changeWrapper);
+    element.addEventListener('keydown', changeWrapperKey);
   });
 }
 
@@ -115,6 +135,7 @@ onTablinksClick();
 var btnFeedbackElement = document.querySelector('.interaction__btnfeedback');
 var popupElement = document.querySelector('.popup');
 var backgroundElement = document.querySelector('.popup-background');
+var nameInputElement = popupElement.querySelector('#name');
 
 function saveLocal() {
   IDS.forEach(function (element) {
@@ -140,23 +161,35 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+function openPopupKey(evt) {
+  if (evt.key === 'Enter') {
+    openPopup();
+  }
+}
+
+function closePopupKey(evt) {
+  if (evt.key === 'Escape') {
+    closePopup();
+  }
+}
 
 function openPopup() {
   popupElement.classList.remove('popup--disabled');
   popupElement.classList.add('popup--active');
   backgroundElement.classList.remove('popup-background--disabled');
   btnFeedbackElement.removeEventListener('click', openPopup);
-  btnFeedbackElement.removeEventListener('keydown', openPopup);
+  btnFeedbackElement.removeEventListener('keydown', openPopupKey);
   btnCloseClick();
   changeInput();
   changeComment();
   controlInputName();
   controlComment();
+  nameInputElement.focus();
 }
 
 function btnFeedbackClick() {
   btnFeedbackElement.addEventListener('click', openPopup);
-  btnFeedbackElement.addEventListener('keydown', openPopup);
+  btnFeedbackElement.addEventListener('keydown', openPopupKey);
 }
 
 btnFeedbackClick();
@@ -168,7 +201,8 @@ function closePopup() {
   popupElement.classList.remove('popup--active');
   backgroundElement.classList.add('popup-background--disabled');
   btnCloseElement.removeEventListener('click', closePopup);
-  btnCloseElement.removeEventListener('keydown', closePopup);
+  popupElement.removeEventListener('keydown', closePopupKey);
+  backgroundElement.removeEventListener('click', closePopup);
   inputElements[0].removeEventListener('input', controlInputName);
 
   inputElements.forEach(function (element) {
@@ -181,7 +215,8 @@ function closePopup() {
 
 function btnCloseClick() {
   btnCloseElement.addEventListener('click', closePopup);
-  btnCloseElement.addEventListener('keydown', closePopup);
+  popupElement.addEventListener('keydown', closePopupKey);
+  backgroundElement.addEventListener('click', closePopup);
 }
 
 btnCloseClick();

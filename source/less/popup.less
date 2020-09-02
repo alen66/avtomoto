@@ -164,6 +164,10 @@ textarea[name="comment"] {
   width: 50%;
   .font-base(@fontNameBold;normal;bold;15px;20px);
   color: #000000;
+
+  &:hover {
+    color: #d12136;
+  }
 }
 
 .popup__rate {
@@ -186,6 +190,13 @@ textarea[name="comment"] {
   content: url("../img/bigstar.svg");
 }
 
+.popup__label--nostar:hover {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  cursor: pointer;
+  content: url("../img/bigstarred.svg");
+}
 
 input[type="checkbox"]:checked + .popup__label--star::before {
   display: inline-block;
