@@ -1,0 +1,41 @@
+.rating__icon {
+  pointer-events: none;
+}
+
+.rating__input {
+  display: none;
+}
+
+.rating__label {
+  cursor: pointer;
+}
+
+.rating__icon--star {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  content: url("../img/bigstarred.svg");
+}
+
+.rating__input:checked ~ .rating__label .rating__icon--star {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  content: url("../img/bigstar.svg");
+}
+
+.popup__rate:hover .rating__label .rating__icon--star {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  content: url("../img/bigstarred.svg");
+}
+
+.rating__input:hover ~ .rating__label .rating__icon--star {
+  display: inline-block;
+  height: 25px;
+  vertical-align: middle;
+  margin: 0;
+  cursor: pointer;
+  content: url("../img/bigstar.svg");
+}

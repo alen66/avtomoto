@@ -9,7 +9,7 @@ imgSmallElements[0].style.border = '2px solid blue';
 
 var btnRightElement = sliderBoxElement.querySelector('.card-slider__btn--right');
 var btnLeftElement = sliderBoxElement.querySelector('.card-slider__btn--left');
-
+btnLeftElement.style.cursor = 'text';
 function changeImgRightButton() {
 
   function changeRightElemArr(i) {
@@ -25,7 +25,7 @@ function changeImgRightButton() {
     changeRightElemArr(0);
     btnRightElement.style.stroke = '#48494d';
     btnLeftElement.style.stroke = '#48494d';
-
+    btnLeftElement.style.cursor = 'pointer';
   } else {
 
     if (imgSmallElements[1].style.border !== '') {
@@ -51,7 +51,6 @@ function changeImgLeftButton() {
 
   btnLeftElement.removeEventListener('click', changeImgLeftButton);
 
-
   if (imgSmallElements[2].style.border !== '') {
     changeLeftElemArr(2);
     btnLeftElement.style.stroke = '#48494d';
@@ -70,7 +69,6 @@ function changeImgLeftButton() {
   onBtnLeftClick();
 }
 
-
 function onBtnRightClick() {
   btnRightElement.addEventListener('click', changeImgRightButton);
   btnRightElement.addEventListener('keydown', changeImgRightButton);
@@ -80,7 +78,6 @@ function onBtnLeftClick() {
   btnLeftElement.addEventListener('click', changeImgLeftButton);
   btnLeftElement.addEventListener('keydown', changeImgLeftButton);
 }
-
 
 onBtnRightClick();
 onBtnLeftClick();
@@ -122,7 +119,7 @@ function changeWrapperKey(evt) {
   }
 }
 
-function onTablinksClick() {
+function onTablinkClick() {
   tablinksElements.forEach(function (element, index) {
     element.setAttribute('data-index', index);
     element.addEventListener('click', changeWrapper);
@@ -130,7 +127,7 @@ function onTablinksClick() {
   });
 }
 
-onTablinksClick();
+onTablinkClick();
 
 var btnFeedbackElement = document.querySelector('.interaction__btnfeedback');
 var popupElement = document.querySelector('.popup');
@@ -149,7 +146,7 @@ function saveLocal() {
 
 document.addEventListener('DOMContentLoaded', saveLocal);
 
-var inputStarElements = document.querySelectorAll('.popup__input');
+var inputStarElements = document.querySelectorAll('.rating__input');
 
 document.addEventListener('DOMContentLoaded', function () {
   inputStarElements.forEach(function (element) {
@@ -176,6 +173,13 @@ function closePopupKey(evt) {
 function openPopup() {
   popupElement.classList.remove('popup--disabled');
   popupElement.classList.add('popup--active');
+  var heightWindowClient = innerHeight;
+  var pointTop = heightWindowClient / 2 - 207;
+  if (pointTop < 0) {
+    pointTop = 30;
+  }
+  inputStarElements[0].checked = true;
+  popupElement.style.top = pointTop + 'px';
   backgroundElement.classList.remove('popup-background--disabled');
   btnFeedbackElement.removeEventListener('click', openPopup);
   btnFeedbackElement.removeEventListener('keydown', openPopupKey);
@@ -230,7 +234,6 @@ IDS.forEach(function (element, i) {
   inputElements[i] = popupElement.querySelector('#' + IDS[i]);
 });
 
-
 function removeSpanName() {
   spanNameElement.remove();
   inputElements[0].style.borderColor = 'rgba(72,73,77,.7)';
@@ -255,7 +258,6 @@ function controlInputName() {
   }
 }
 
-
 function controlComment() {
   if (inputElements[3].value === '') {
     inputElements[3].before(spanCommentElement);
@@ -263,8 +265,8 @@ function controlComment() {
     removeSpanComment();
   }
 }
-function changeInput() {
 
+function changeInput() {
   inputElements.forEach(function (element) {
     element.addEventListener('click', controlComment);
     element.addEventListener('click', controlInputName);
@@ -283,86 +285,49 @@ function changeComment() {
 
 changeComment();
 
-var ratePopupElement = document.querySelector('.popup__rate');
-var labelStarElements = ratePopupElement.querySelectorAll('.popup__label');
+setTimeout(function () {
+  var elem = document.createElement('script');
+  elem.type = 'text/javascript';
+  elem.src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=30be2f5a-56b4-47d1-b991-8d63a124f9ff&onload=getYaMap';
+  document.getElementsByTagName('body')[0].appendChild(elem);
+}, 2000);
 
-function changeStarElement(el) {
+var ymaps;
 
-  var ddd = +el.target.value;
-  var ii = ddd - 2;
-  var ch = el.target.checked;
-  var ch1 = el.target.checked;
-  if (ddd !== 1) {
-    if (ch === true && inputStarElements[ii].checked === false) {
-      el.target.checked = false;
-    } else {
+function getYaMap() {
 
-      if (ddd !== 5) {
-        if (ch1 === false && inputStarElements[ddd].checked === true) {
-          el.target.checked = true;
-        }
-      }
-    }
-  } else {
-    if (ch === false && inputStarElements[ddd].checked === true) {
-      el.target.checked = true;
-    }
-  }
-
-  if (ch === true) {
-    labelStarElements[ddd - 1].classList.add('popup__label--star');
-  } else {
-    labelStarElements[ddd - 1].classList.add('popup__label--nostar');
-  }
+  var myMap = new ymaps.Map('map', {center: [59.968268840756444, 30.316735568786598], zoom: 17});
+  ymaps.geocode('Санкт-Петербург, набережная реки Карповки, дом 5').then(function (res) {
+    var coord = res.geoObjects.get(0).geometry.getCoordinates();
+    var myPlacemark = new ymaps.Placemark(coord);
+    myMap.geoObjects.add(myPlacemark);
+    myMap.setCenter(coord);
+  });
 }
 
-
-inputStarElements.forEach(function (element) {
-  element.addEventListener('click', changeStarElement);
-});
-
-ymaps.ready(init);
-var myMap;
-var myPlacemark;
-
-function init() {
-
-  myMap = new ymaps.Map('map', {
-    center: [59.968268840756444, 30.316735568786598],
-    zoom: 17
-  });
-
-  myMap.controls.add(new ymaps.control.ZoomControl());
-
-  myPlacemark = new ymaps.Placemark([59.968268840756444, 30.316735568786598], {
-    balloonContent: '<div>Санкт-Петербург, набережная реки Карповки, дом 5</div>'
-  }, {
-    preset: 'twirl#redDotIcon'
-  });
-
-  myMap.geoObjects.add(myPlacemark);
-  myPlacemark.balloon.open();
-}
-
+getYaMap;
 function getRating() {
   var boxStarElement = document.querySelector('.interaction__advice');
   var ratingStarElements = boxStarElement.querySelectorAll('.interaction__star');
+  var valueIndex;
+  inputStarElements.forEach(function (element, index) {
+    if (inputStarElements[index].checked === true) {
+      valueIndex = index;
+    }
+  });
   ratingStarElements.forEach(function (element, index) {
     ratingStarElements[index].innerHTML = '<use xlink:href="#icon-star"></use>';
-    if (inputStarElements[index].checked === true) {
+    if (index < valueIndex) {
       ratingStarElements[index].classList.value = 'interaction__star interaction__star--red';
     } else {
       ratingStarElements[index].classList.value = 'interaction__star interaction__star--grey';
     }
   });
-
 }
 
 function submitHandler(evt) {
   var commentFirstElement = document.querySelector('.interaction__comment--first');
-  var commentSecondElement = document.querySelector('.interaction__comment--second');
   var commentElement = commentFirstElement.cloneNode(true);
-  commentSecondElement.style.display = 'none';
   commentFirstElement.classList.remove('interaction__comment--first');
   commentFirstElement.classList.add('interaction__comment--second');
   commentFirstElement.querySelector('.interaction__btnfeedback').remove();

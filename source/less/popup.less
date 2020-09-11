@@ -1,6 +1,5 @@
 .popup--active {
-  position: absolute;
-  top: 665px;
+  position: fixed;
   right: 50%;
   display: flex;
   width: 698px;
@@ -192,6 +191,7 @@ textarea[name="comment"] {
 
 .popup__label--nostar:hover {
   display: inline-block;
+  height: 25px;
   vertical-align: middle;
   margin: 0;
   cursor: pointer;
@@ -225,4 +225,9 @@ input[type="checkbox"]:checked + .popup__label--star::before {
   letter-spacing: 0.12em;
   color: #ffffff;
   border: none;
+  cursor: pointer;
+
+  &:hover {
+    background: #bd0c21;
+  }
 }

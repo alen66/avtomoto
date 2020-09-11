@@ -6,7 +6,7 @@
 .interaction__container {
   position: relative;
   display: flex;
-  width: 1170px;
+  width: 1200px;
   flex-direction: column;
   align-items: flex-start;
   .mg-auto();
@@ -15,7 +15,7 @@
 .interaction__tab {
   display: flex;
   flex-direction: row;
-  width: 585px;
+  width: 50%;
 }
 
 .interaction__tab-links {
@@ -30,10 +30,12 @@
   background-color: #ffffff;
   color: #48494d;
   outline: #48494d;
+  cursor: pointer;
 }
 
 .interaction__table {
   width: 585px;
+  margin-top: 13px;
   border-collapse: collapse;
 }
 
@@ -57,7 +59,7 @@
 .interaction__wrapper--comment {
   display: none;
   flex-direction: column;
-  width: 1170px;
+  width: 1200px;
   .mg-auto();
 }
 
@@ -182,6 +184,7 @@
   text-transform: uppercase;
   color: #d12136;
   background-color: white;
+  cursor: pointer;
 }
 
 .interaction-contact__container--adress {
@@ -208,6 +211,11 @@
   .font-base(@fontNameBold;normal;600;14px;19px);
   text-decoration: none;
   color: #000000;
+
+  &:hover {
+    opacity: 0.8;
+    color: #48494d;
+  }
 }
 
 .interaction-contact__container--map {
@@ -215,7 +223,7 @@
   height: 271px;
 }
 
-.interaction-box__map {
+.interaction-contact__box-map {
   position: absolute;
   top: 0;
   left: 0;

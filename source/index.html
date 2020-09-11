@@ -8,19 +8,20 @@
   <link rel="preload" href="fonts/opensans.woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="fonts/opensansbold.woff2" as="font" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.min.css">
-  <link rel="shortcut icon" href="">
-</head>
+<!--   <link rel="shortcut icon" href="">
+ --></head>
 <body>
   <div style="display: none;">
     <include src="source/img/sprite_auto.svg"></include>
   </div>
   <header class="header">
     <div class="header__wrapper">
-      <a href="#" aria-label="Логотип" class="header__logo">
+      <a aria-label="Логотип" class="header__logo">
         <img src="img/logo.svg" alt="Логотип" width="55" height="55">
-        <p>avto<br>
-          moto
-        </p>
+        <div class="header__wrapper header__wrapper--text">
+        <p>avto</p>
+        <p>moto</p>
+        </div>
       </a>
     </div>
     <nav class="main-nav">
@@ -50,21 +51,21 @@
           <picture>
           <!-- 1х: 600px; 2x: 1200px -->
           <source type="image/webp" srcset="img/slide1_1x.webp 1x, img/slide1_2x.webp 2x">
-            <img src="img/slide1_1x.jpg" width="600" height="375" alt="Фото автомобиля" >
+            <img src="img/slide1_1x.jpg" srcset="img/slide1_2x.jpg 2x" width="600" height="375" alt="Фото автомобиля" >
           </picture>
         </div>
         <div id="img2" class="card__img card__img--slide2">
           <picture>
           <!-- 1х: 600px; 2x: 1200px -->
           <source type="image/webp" srcset="img/slide2_1x.webp 1x, img/slide2_2x.webp 2x">
-            <img src="img/slide2_1x.jpg" width="600" height="375" alt="Фото автомобиля" >
+            <img loading=lazy src="img/slide2_1x.jpg" srcset="img/slide2_2x.jpg 2x" width="600" height="375" alt="Фото автомобиля" >
           </picture>
         </div>
         <div id="img3" class="card__img card__img--slide3">
           <picture>
           <!-- 1х: 600px; 2x: 1200px -->
           <source type="image/webp" srcset="img/slide3_1x.webp 1x, img/slide3_2x.webp 2x">
-            <img src="img/slide3_1x.jpg" width="600" height="375" alt="Фото автомобиля" >
+            <img loading=lazy src="img/slide3_1x.jpg" srcset="img/slide3_2x.jpg 2x" width="600" height="375" alt="Фото автомобиля" >
           </picture>
         </div>
         <div class="card__description">
@@ -97,7 +98,7 @@
           </ul>
           <div class="card__price">
             <h3>2 300 000  ₽</h3>
-            <p> 2 400 000  ₽</p>
+            <p>2  &nbsp;400 000 ₽</p>
           </div>
           <button  class="card__btn card__btn--request" type="submit" value="Отправить">оставить заявку</button>
           <button  class="card__btn card__btn--credit" type="submit" value="Отправить">в кредит от 11 000 ₽</button>
@@ -108,9 +109,9 @@
           <svg aria-label="Кнопка влево" class="card-slider__btn  card-slider__btn--left" width="52" height="52">
             <use xlink:href="#icon-left"></use>
           </svg>
-          <img id="slide1" src="img/slide1_1x.jpg" width="128" height="80" alt="Фото автомобиля" >
-          <img id="slide2" src="img/slide2_1x.jpg" width="128" height="80" alt="Фото автомобиля" >
-          <img id="slide3" src="img/slide3_1x.jpg" width="128" height="80" alt="Фото автомобиля" >
+          <img id="slide1" src="img/slide1_1x.jpg" srcset="img/slide1_2x.jpg 2x" width="128" height="80" alt="Фото автомобиля" >
+          <img id="slide2" src="img/slide2_1x.jpg" srcset="img/slide2_2x.jpg 2x" width="128" height="80" alt="Фото автомобиля" >
+          <img id="slide3" src="img/slide3_1x.jpg" srcset="img/slide3_2x.jpg 2x" width="128" height="80" alt="Фото автомобиля" >
           <svg aria-label="Кнопка вправо" class="card-slider__btn card-slider__btn--right" width="52" height="52">
             <use xlink:href="#icon-right"></use>
           </svg>
@@ -212,8 +213,8 @@
             <a href="mailto:info@avto-moto.ru">info@avto-moto.ru</a>
           </div>
           <div class="interaction-contact__container interaction-contact__container--map">
-            <div class="interaction-box__map" id="map"></div>
-            <img src="img/contacts.png" width="431" height="271" alt="Карта">
+            <div class="interaction-contact__box-map" id="map"></div>
+            <img loading=lazy src="img/contacts.png" width="431" height="271" alt="Карта">
           </div>
         </div>
       </div>
@@ -248,7 +249,6 @@
       </section>
     </footer>
     <div class="popup-background popup-background--disabled">
-
     </div>
     <div class="popup popup--disabled">
       <h2>Оставить отзыв</h2>
@@ -266,17 +266,18 @@
         <fieldset class="popup__element popup__element--rate">
           <div class="popup__wrapper">
             <p>Оцените товар</p>
-            <div class="popup__rate">
-              <input class="popup__input" type="checkbox" id="rating1" name="rating" value="1"/>
-              <label class="popup__label popup__label--nostar" for="rating1" title="1 star"></label>
-              <input class="popup__input" type="checkbox" id="rating2" name="rating" value="2" />
-              <label class="popup__label popup__label--nostar" for="rating2" title="2 star"></label>
-              <input class="popup__input" type="checkbox" id="rating3" name="rating" value="3" />
-              <label class="popup__label popup__label--nostar" for="rating3" title="3 star"></label>
-              <input class="popup__input" type="checkbox" id="rating4" name="rating" value="4" />
-              <label class="popup__label popup__label--nostar" for="rating4" title="4 star"></label>
-              <input class="popup__input" type="checkbox" id="rating5" name="rating" value="5" />
-              <label class="popup__label popup__label--nostar" for="rating5" title="5 star"></label>
+            <div class="popup__rate rating">
+              <input disabled checked class="rating__input rating__input--none" name="rating" id="rating3-none" value="0" type="radio">
+              <label aria-label="1 star" class="rating__label" for="rating1" title="очень плохо"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+              <input class="rating__input" id="rating1" name="rating" value="1" type="radio">
+              <label aria-label="2 stars" class="rating__label" for="rating2" title="плохо"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+              <input class="rating__input" id="rating2" name="rating" value="2" type="radio">
+              <label aria-label="3 stars" class="rating__label" for="rating3" title="средне"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+              <input class="rating__input" id="rating3" name="rating" value="3" type="radio">
+              <label aria-label="4 stars" class="rating__label" for="rating4" title="хорошо"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+              <input class="rating__input" id="rating4" name="rating" value="4" type="radio">
+              <label aria-label="5 stars" class="rating__label" for="rating5" title="отлично"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+              <input class="rating__input" id="rating5" name="rating" value="5" type="radio">
             </div>
           </div>
           <span class="popup__span popup__span--comment"></span>
@@ -286,7 +287,9 @@
         <button  class="popup__btn" type="submit" value="Отправить">оставить отзыв</button>
       </form>
     </div>
-    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=API_KEY"></script>
-    <script src="js/script.js"></script>
+<!--   <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=30be2f5a-56b4-47d1-b991-8d63a124f9ff"
+  type="text/javascript">
+  </script>
+ -->  <script src="js/main.js"></script>
 </body>
 </html>

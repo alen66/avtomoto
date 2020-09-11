@@ -12,19 +12,32 @@
   width: 50%;
 }
 
+.header__wrapper--text {
+  display: flex;
+  flex-direction: column;
+}
+
 .header__logo {
   display: flex;
   flex-direction: row;
   position: absolute;
   width: 55px;
   height: 55px;
-  left: 376px;
+  right: 540px;
   top: 15px;
   cursor: pointer;
   text-decoration-line: none;
 }
 
-.header__logo p {
+.header__wrapper--text p {
+  .font-base(@fontName;normal;600;14px;19px);
+  letter-spacing: 0.13em;
+  color: #48494d;
+  text-transform: uppercase;
+  padding: 5px 0 0 20px;
+}
+
+.header__wrapper--text p:first-of-type {
   .font-base(@fontNameBold;normal;600;18px;25px);
   letter-spacing: 0.13em;
   color: #48494d;
