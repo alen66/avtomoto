@@ -944,6 +944,7 @@ p {
   line-height: 19px;
   color: #ff0000;
   padding-bottom: 3px;
+  opacity: 0;
 }
 .popup__element--name input {
   width: 300px;
@@ -951,9 +952,10 @@ p {
   margin-bottom: 16px;
   padding-left: 25px;
 }
-input[name="name"] {
+/*input[name="name"] {
   border-color: #ff0000;
 }
+*/
 .popup__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -986,6 +988,7 @@ textarea[name="comment"] {
 }
 .popup__span {
   position: relative;
+  display: none;
 }
 .popup__span--comment::before {
   position: absolute;

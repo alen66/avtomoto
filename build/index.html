@@ -7,6 +7,8 @@
   <title>Автомото</title>
   <link rel="preload" href="fonts/opensans.woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="fonts/opensansbold.woff2" as="font" crossorigin="anonymous">
+  <link rel="preconnect" href="//api-maps.yandex.ru">
+  <link rel="dns-prefetch" href="//api-maps.yandex.ru">
   <link rel="stylesheet" href="css/style.min.css">
 <!--   <link rel="shortcut icon" href="">
  --></head>
@@ -332,7 +334,7 @@
         <fieldset class="popup__element popup__element--name">
           <label class="popup__label popup__label--name" for="name">Пожалуйста, заполните поле</label>
           <span class="popup__span popup__span--name"></span>
-          <input type="text" name="name" id="name" placeholder="Имя" required="" autofocus="">
+          <input type="text" name="name" id="name" placeholder="Имя" autofocus="">
           <label for="advantage"></label>
           <input type="text" name="advantage" id="advantage" placeholder="Достоинства" title="Достоинства">
           <label for="disadvantage"></label>
@@ -357,14 +359,12 @@
           </div>
           <span class="popup__span popup__span--comment"></span>
           <label for="comment" title="Заполните комментарий"></label>
-          <textarea id="comment" name="comment" placeholder="Комментарий" minlength="30" maxlength="1000" required=""></textarea>
+          <textarea id="comment" name="comment" placeholder="Комментарий" minlength="30" maxlength="1000"></textarea>
         </fieldset>
         <button class="popup__btn" type="submit" value="Отправить">оставить отзыв</button>
       </form>
     </div>
-<!--   <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=30be2f5a-56b4-47d1-b991-8d63a124f9ff"
-  type="text/javascript">
-  </script>
- -->  <script src="js/main.js"></script>
+    <script src="js/vendor.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

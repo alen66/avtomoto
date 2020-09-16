@@ -104,6 +104,7 @@
   .font-base(@fontName;normal;normal;14px;19px);
   color: #ff0000;
   padding-bottom: 3px;
+  opacity: 0;
 }
 
 .popup__element--name input {
@@ -113,10 +114,10 @@
   padding-left: 25px;
 }
 
-input[name="name"] {
+/*input[name="name"] {
   border-color: #ff0000;
 }
-
+*/
 .popup__wrapper {
   display: flex;
   flex-direction: row;
@@ -141,6 +142,7 @@ textarea[name="comment"] {
 
 .popup__span {
   position: relative;
+  display: none;
 }
 
 .popup__span--comment::before {
