@@ -1,4 +1,3 @@
-'use strict';
 (function savelocal() {
   var IDS = ['name', 'advantage', 'disadvantage', 'comment'];
   function saveLocal() {

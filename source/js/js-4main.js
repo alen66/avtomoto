@@ -1,4 +1,3 @@
-'use strict';
 (function () {
   var IDS = ['name', 'advantage', 'disadvantage', 'comment'];
 

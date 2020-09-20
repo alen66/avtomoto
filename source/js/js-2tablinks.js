@@ -1,4 +1,3 @@
-'use strict';
 (function () {
   var tablinksElements = document.querySelectorAll('.interaction__tab-links');
   var wrapperElements = document.querySelectorAll('.interaction__wrapper');
